@@ -29,6 +29,7 @@ fs.readFile("json.json", "utf-8", (err, data)=>{
 })
 
 
+
 fs.readFile("emp.json", "utf8", (err, emp)=>{
     if(err) throw err
     let empData = JSON.parse(emp)
