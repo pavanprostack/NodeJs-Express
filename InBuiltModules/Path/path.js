@@ -1,4 +1,3 @@
 const path = require('path')
-
-let filePath = path.join(__dirname, "files", "pavan", "one.json")
-console.log(filePath)
+let p = path.join(__dirname, "files", "KGF3", "one.json")
+console.log(p)
