@@ -1,3 +1,5 @@
+// npm i jsonwebtoken
+
 // Creating Token (to create Token we need username or email, payload, secretkey, expiringtime is mandatory.)
 
 const jwt = require('jsonwebtoken')
