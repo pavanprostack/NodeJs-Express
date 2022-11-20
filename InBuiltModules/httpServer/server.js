@@ -1,4 +1,3 @@
-// npm i http
 
  const http = require('http')
 
@@ -8,7 +7,7 @@ let server = http.createServer((request, response)=>{
     response.end("Hi, I'm Creating Server")
 });
 
-server.listen(8080, ()=>{
+server.listen(8080,()=>{                         // here 8080 is optional
     console.log("Server is running on...")
 })
 
@@ -18,6 +17,6 @@ server.listen(8080, ()=>{
 //     response.end("server is created")
 // })
 
-// server.listen(9090,()=>{
+// server.listen(()=>{
 //     console.log("Hey...Server is running on buddy.....")
 // })
