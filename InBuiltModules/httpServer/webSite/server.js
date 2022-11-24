@@ -53,5 +53,5 @@ let server = http.createServer((request, response) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`Server is running on.....:${PORT}`)
+    console.log(`Server is running on.....http://localhost:${PORT}`)
 })
