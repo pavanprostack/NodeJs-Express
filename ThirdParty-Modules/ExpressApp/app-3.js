@@ -5,11 +5,14 @@ const express = require('express')
 const app = express();
 
 
-let file = path.join(__dirname,"config" ,"config.env")
+// let file = path.join(__dirname,"config" ,"config.env")
 
-dotenv.config({path:file});
+// dotenv.config({path:file});
+dotenv.config({path:"./config/config.env"});
+
 
 let port=process.env.PORT;
+console.log(port)
 let hostName = process.env.HOST_NAME;
 
 app.use(morgan('tiny'))
