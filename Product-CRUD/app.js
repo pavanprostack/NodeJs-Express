@@ -16,7 +16,7 @@ let hostname = process.env.HOST_NAME;
 
 console.log(port);
 
-app.use(morgan('tiny'));
+app.use(morgan('tiny'))
 
 app.use(cors());
 
@@ -45,5 +45,5 @@ mongoose.connect(mongo_url)
     })
 
 app.listen(()=>{
-    console.log(`Server is running on.....http://${hostname}:${port}`)
+    console.log(chalk.magentaBright(`${`Server is running on.....http://${hostname}:${port}`}`))
 })
