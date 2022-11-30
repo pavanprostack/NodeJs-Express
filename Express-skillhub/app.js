@@ -1,7 +1,10 @@
 import express from 'express'
+import cors from 'cors'
 const app = express();
 
+
 app.use(express.json())  // for recieving POST data we use this.
+app.use(cors());
 
 app.get("/", (req, res)=>{
     res.send("Hello World!")
