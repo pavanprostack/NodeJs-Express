@@ -15,6 +15,7 @@ let hostname = process.env.HOST_NAME;
 
 
 console.log(port);
+console.log(hostname);
 
 app.use(morgan('tiny'))
 
@@ -32,12 +33,14 @@ app.get("/", (request, response)=>{
 
 
 //configure product routes
-app.use("/product", productRouter)
+app.use("/product", productRouter);
 
+
+// Connecting To MongoDB
 const mongo_url = process.env.MONGO_DB_LOCAL_URL
 mongoose.connect(mongo_url)
     .then((response) => {
-        console.log(`Mongo DB - Connection Successfull!`)
+        console.log(chalk.cyanBright(`${`Mongo DB - Connection Successfull!`}`))
     })
     .catch((err) => {
         console.log(err)

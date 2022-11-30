@@ -3,7 +3,7 @@ const router = express.Router()
 
 /* router.get(); */
 /*
-    URL:localhost:8000/product/create
+    URL:localhost:7000/product/create
     Method:POST
     Fields:name, price, qty
 */
@@ -16,7 +16,7 @@ router.post("/create", async (request, response) => {
             price: request.body.price,
             qty: request.body.qty
         }
-        let x = await
+        await response.send(product)
             console.log(product)
     }
     catch (err) { }
