@@ -1,7 +1,11 @@
 import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
 const app = express();
 
+dotenv.config({path:"./config/config.env"})
+const port=process.env.PORT;
+const hostname=process.env.HOST_NAME;
 
 app.use(express.json())  // for recieving POST data we use this.
 app.use(cors());
@@ -25,6 +29,7 @@ const products =[
 }
 ]
 
+
 app.get("/products", (req, res)=>{
     res.send(products)  // (or) res.json(products)  it is for getting response in the form of Json.
 })
@@ -44,6 +49,6 @@ app.post("/addproducts", (req, res)=>{
 })
 
 
-app.listen(8000, ()=>{
-    console.log("Server is running on...")
+app.listen(port,hostname, ()=>{
+    console.log(`Server is running on...http://${hostname}:${port}`)
 })
