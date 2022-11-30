@@ -12,7 +12,7 @@ app.get("/", (req, res)=>{
 
 let hostname = "127.0.0.1"
 
-app.listen(8077,  (err)=>{
+app.listen(8077,hostname,  (err)=>{
     if(err) throw err
     // console.log(`Server is running on...http://localhost:${8077}`)
     console.log(`${chalk.magentaBright(`Server is running on...http://${hostname}:${8077}`)}`)

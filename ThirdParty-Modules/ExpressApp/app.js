@@ -1,14 +1,12 @@
-
-const path = require('path')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const express = require('express')
 // Here created express app
+
 const app = express(); 
 
-let file= path.join(__dirname, "config", "config.env");
 
-dotenv.config({path:file});
+dotenv.config({path:"./config/config.env"});
 
 let port = process.env.PORT;
 let hostName = process.env.HOST_NAME;
