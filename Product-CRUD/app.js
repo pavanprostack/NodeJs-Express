@@ -13,10 +13,6 @@ dotenv.config({ path: "./config/config.env" });
 let port = process.env.PORT;
 let hostname = process.env.HOST_NAME;
 
-
-console.log(port);
-console.log(hostname);
-
 app.use(morgan('tiny'))
 
 app.use(cors());
