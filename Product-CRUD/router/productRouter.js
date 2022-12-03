@@ -17,8 +17,8 @@ router.post("/create", async (request, response) => {
             qty: request.body.qty
         }
         // Product Validation. validation should be do atfter product datails(new_Product)
-        const Product = await ProductModel.findOne({ name: new_Product.name });
-        if (Product) {
+        const verifyProduct = await ProductModel.findOne({ name: new_Product.name });
+        if (verifyProduct) {
             return response.status(401).json({
                 msg: "Already existed"
             })
