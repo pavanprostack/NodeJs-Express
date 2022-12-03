@@ -82,30 +82,32 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete Product
-router.delete("/:id", async(req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
         const product_Id = req.params.id;
         const product = await ProductModel.findById(product_Id);
         if (!product) {
-           return res.status(401).json({
+            return res.status(401).json({
                 result: "No products with that id!"
             })
         }
         const delProduct = await ProductModel.findByIdAndDelete(product_Id);
         res.status(200).json({
             result: "Deleted Successfully",
-           product:delProduct
+            product: delProduct
         })
     }
     catch (err) { }
 
-    // router.delete("/all", async(req, res)=>{
-    //  await ProductModel.remove({});
-    //   res.status(200).json({
-    //     result:"Deleted All Data Successfully"
-    //   })
+    // router.delete("/all", async (req, res) => {
+    //     try {
+    //         await ProductModel.remove({});
+    //         res.status(200).json({
+    //             result: "Deleted All Data Successfully"
+    //         })
+    //     }
+    //     catch (err) { }
     // })
-
 })
 
 export default router
