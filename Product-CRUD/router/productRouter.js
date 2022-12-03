@@ -2,6 +2,27 @@ import express from 'express'
 const router = express.Router()
 import ProductModel from '../model/product.js'
 
+
+/*
+    URL:127.88.99.77:7000/product/all
+    Method:Get
+    Fields:Node
+*/
+
+// Get All Products
+router.get("/all", async (req, res) => {
+    try {
+        let products = await ProductModel.find();
+        res.status(200).json(products)
+    }
+    catch (err) {
+        res.status(500).json({
+            msg: err.message
+        })
+    }
+});
+
+
 /*
     URL:localhost:7000/product/create
     Method:POST
@@ -34,25 +55,6 @@ router.post("/create", async (request, response) => {
 
     }
     catch (err) { }
-});
-
-/*
-    URL:127.88.99.77:7000/product/all
-    Method:Get
-    Fields:Node
-*/
-
-// Get All Products
-router.get("/all", async (req, res) => {
-    try {
-        let products = await ProductModel.find();
-        res.status(200).json(products)
-    }
-    catch (err) {
-        res.status(500).json({
-            msg: err.message
-        })
-    }
 });
 
 
