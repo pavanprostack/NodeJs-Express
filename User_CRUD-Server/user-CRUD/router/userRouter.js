@@ -44,6 +44,8 @@ router.post("/register", async (req, res) => {
     }
 })
 
+
+
 /*
  API URL: http://127.1.0.7:7000/user/login
  Method: POST
@@ -79,7 +81,7 @@ router.post("/login", async (req, res) => {
         }
         let secretkey = process.env.SECRET_KEY
         //generate JWT token
-        jwt.sign(payload, secretkey, (err, token) => {
+        jwt.sign(payload, secretkey, {expiresIn:30000}, (err, token) => {
             if (err) throw err
             res.status(200).json({
                 Status: "Login Successfull",
