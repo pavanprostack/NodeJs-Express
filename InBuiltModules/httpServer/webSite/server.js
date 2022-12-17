@@ -8,7 +8,7 @@ const url = require('url')
 let file = path.join(__dirname, "config", "config.env")
 // console.log(file)
 
-dotenv.config({ path: file })
+dotenv.config({ path: "./config/config.env" })
 
 
 let PORT = process.env.PORT;
@@ -55,3 +55,30 @@ let server = http.createServer((request, response) => {
 server.listen(PORT, () => {
     console.log(`Server is running on.....http://localhost:${PORT}`)
 })
+
+
+
+// Practice
+
+// const server1=http.createServer((req, res)=>{
+//      url = req.url;
+//     res.writeHead(200, {"contentType" : "text/html"});
+
+//     if(url="/"){
+//         fs.readFile("./views/index.html", "utf-8", (err, data)=>{
+//             if(err) throw err;
+//             console.log(data);
+//         })
+//     }
+
+//     if(url="/about"){
+//         fs.readFile("./views/about.html", "utf-8", (err, data)=>{
+//             if(err) throw err;
+//             console.log(data);
+//         })
+//     }
+// })
+
+// server1.listen(PORT, ()=>{
+//     console.log(`Server is running on http://localhost:${PORT}`);
+// })

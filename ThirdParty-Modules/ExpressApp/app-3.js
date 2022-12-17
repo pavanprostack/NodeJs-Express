@@ -1,11 +1,8 @@
 const dotenv = require('dotenv');
-const path = require('path')
 const morgan = require('morgan')
 const express = require('express')
 const app = express();
 
-
-// let file = path.join(__dirname,"config" ,"config.env")
 
 // dotenv.config({path:file});
 dotenv.config({path:"./config/config.env"});

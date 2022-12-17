@@ -2,8 +2,9 @@ const path = require('path')
 const fs = require('fs')
 
 // joining path
-let p = path.join(__dirname, "pk", "KGF", "one.json")
+let p = path.join(__dirname, "pk", "KGF", "one.json");
 console.log(p)
+
 
 
 //reading data

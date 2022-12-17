@@ -7,6 +7,10 @@ fs.writeFile("one.txt", "This is Async Method", "utf-8", (err)=>{
     if(err) throw err
 })
 
+fs.writeFile("pk.text", "Iam pavankalyan - Begger", "utf-8", (err)=>{
+    if(err) throw err;
+})
+
 
 
 // Reading

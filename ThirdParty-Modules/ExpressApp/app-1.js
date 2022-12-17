@@ -13,3 +13,14 @@ app.listen(7070, (err)=>{
     if(err) throw err
     console.log(`Your Server is running on.....http://localhost:${7070} `)
 })
+
+
+
+// practice
+app.get("/", (req, res)=>{
+    res.send("pavanklayan")
+});
+
+app.listen(9000, ()=>{
+    console.log(`Your Server is running on.....http://localhost:${9000} `)
+})
