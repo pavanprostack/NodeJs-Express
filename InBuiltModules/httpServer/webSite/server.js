@@ -56,35 +56,35 @@ dotenv.config({ path: "./config/config.env" })
 
 // Practice
 
-let port = process.env.PORT
+// let port = process.env.PORT
 
-const server=http.createServer((req, res)=>{
-    const url = req.url;
-    res.writeHead(200, {"content-type":"text/html"});
+// const server=http.createServer((req, res)=>{
+//     const url = req.url;
+//     res.writeHead(200, {"content-type":"text/html"});
 
-    if(url=="/"){
-        fs.readFile("views/index.html", "utf-8", (err, data)=>{
-            if(err) throw err;
-            res.end(data)
-        })
-    }
-    if(url=="/about"){
-        fs.readFile("views/about.html", "utf-8", (err, data)=>{
-            res.end(data)
-        })
-    }
-    if(url=="/contact"){
-        fs.readFile("views/contact.html", "utf-8", (err, data)=>{
-            res.end(data)
-        })
-    }
-    if(url=="/services"){
-        fs.readFile("views/services.html", "utf-8", (err, data)=>{
-            res.end(data)
-        })
-    }
-})
+//     if(url=="/"){
+//         fs.readFile("views/index.html", "utf-8", (err, data)=>{
+//             if(err) throw err;
+//             res.end(data)
+//         })
+//     }
+//     if(url=="/about"){
+//         fs.readFile("views/about.html", "utf-8", (err, data)=>{
+//             res.end(data)
+//         })
+//     }
+//     if(url=="/contact"){
+//         fs.readFile("views/contact.html", "utf-8", (err, data)=>{
+//             res.end(data)
+//         })
+//     }
+//     if(url=="/services"){
+//         fs.readFile("views/services.html", "utf-8", (err, data)=>{
+//             res.end(data)
+//         })
+//     }
+// })
 
-server.listen(port, ()=>{
-    console.log(`Server is running on http://localhost:${port}`)
-})
+// server.listen(port, ()=>{
+//     console.log(`Server is running on http://localhost:${port}`)
+// })
