@@ -36,23 +36,26 @@ console.log(user_Id)
 
 
 // Practice
-let students={
-    id:105,
-    name:"pk",
-    password:"1234",
-    email:"pk@gmail.com"
+let students = {
+    id: 01,
+    name: "Rahul Gandhi",
+    password: "123456789",
+    email: 'rahul@gmail.com'
 }
 
-// payload
-let payload1 = {
+// Payload
+let payload1={
     id:students.id,
     email:students.email
 }
 
-//secret key
-let secretkey1="9876543"
+// Secretkey
+let secretkey1='17031997'
 
+// token
 let token1=jwt.sign(payload1, secretkey1, {expiresIn:90000})
-
-let student_Id = jwt.verify(token1, secretkey1)
 console.log(token1)
+
+// verification
+let userId=jwt.verify(token1, secretkey1)
+console.log(userId)
