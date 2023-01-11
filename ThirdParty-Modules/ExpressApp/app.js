@@ -15,6 +15,10 @@ let hostName = process.env.HOST_NAME;
 //morgan is a Node. js and Express middleware to log HTTP requests and errors, and simplifies the process. In Node. js and Express, middleware is a function that has access to the request and response lifecycle methods, and the next() method to continue logic in your Express server.
 app.use(morgan('tiny'))
 
+app.get("/", (req, res)=>{
+    res.send("This is root request")
+})
+
 // calling user data from userRouter file using Morgan Package
 app.use("/user", require('./userRouter'))
 
