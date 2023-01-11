@@ -10,4 +10,7 @@ fs.readFile("one.csv", "utf-8", (err, data)=>{
 //     console.log(data);
 // })
 
-fs.readFile("one.js", "ut")
+fs.readFile("one.csv", "utf-8", (err, data)=>{
+    if(err) throw err;
+    console.log(data)
+})
