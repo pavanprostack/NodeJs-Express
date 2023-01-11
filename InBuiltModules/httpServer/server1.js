@@ -1,23 +1,26 @@
-const http = require('http')
-const dotenv = require('dotenv')
-const path = require('path')
+
+ const http = require('http')
 
 
-let file = path.join(__dirname, "config", "config.env")
-dotenv.config({ path: file })
-
-let port = process.env.PORT
-// let hostName = process.env.HOST_NAME
-
-console.log(port)
-// console.log(hostName)
-
-
-let server = http.createServer((request, response) => {
-    response.writeHead(200, { 'content-type': 'text/html'});
-    response.end(`<h1>Hello!, Enjoy the day</h1>`)
+let server = http.createServer((request, response)=>{
+    response.writeHead(200, {'content-type':'text/plain'})  // this line is Optional
+    response.end("Hi, I'm Creating Server")
 });
 
-server.listen(port, () => {
-    console.log(`Server is running on...${port}`)
+server.listen(8080,()=>{                         // here 8080 is optional
+    console.log("Server is running on http://localhost:8080")
 })
+
+
+
+
+// const http = require('http');
+
+// const server = http.createServer((req, res)=>{
+//     // res.writeHead(200, {"content-type":"text/html"});   
+//     res.end("This is just a practice bro....")
+// })
+
+// server.listen(8000, ()=>{
+//     console.log("Server is running on http://localhost:8000")
+// })
