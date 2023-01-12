@@ -34,7 +34,10 @@ app.use("/product", productRouter);
 
 // Connecting To MongoDB
 const mongo_url = process.env.MONGO_DB_LOCAL_URL
-mongoose.connect(mongo_url)
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(mongo_url, {useNewUrlParser: true})
     .then((response) => {
         console.log(chalk.cyanBright(`Mongo DB - Connection Successfull!`))
     })

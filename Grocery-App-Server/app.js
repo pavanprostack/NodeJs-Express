@@ -24,8 +24,12 @@ app.get("/", (req, res)=>{
 
 app.use("/product", productRouter)
 
-let mongo_Url = process.env.MONGO_DB_LOCAL_URL
-mongoose.connect(mongo_Url).then((response)=>{
+let mongo_Url = process.env.MONGO_DB_LOCAL_URL;
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(mongo_Url, {useNewUrlParser: true})
+.then((response)=>{
     console.log(`Mongo DB - Connected Successfully.`)
 }).catch((err)=>{
     console.log(err);
