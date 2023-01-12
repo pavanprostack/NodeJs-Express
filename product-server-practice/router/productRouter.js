@@ -1,4 +1,5 @@
 import express from 'express';
+import { set } from 'mongoose';
 import ProductModel from '../model/Product.js'
 const router = express.Router();
 
@@ -63,7 +64,60 @@ router.get("/:id", async (req, res) => {
 })
 
 // update product
+router.put("/:id", async (req, res) => {
+    try {
+        let product_Id = req.params.id
+    let updatedProduct = {
+        name: req.body.name,
+        price: req.body.price,
+        image: req.body.image,
+        qty: req.body.qty,
+        info: req.body.info
+    }
 
+    let product = await ProductModel.findById(product_Id);
+    if (!product) {
+        return res.status(401).json({
+            result: "Product not exists!"
+        })
+    }
+
+    let updateProduct = await ProductModel.findByIdAndUpdate(product_Id, { $set: updatedProduct }, { new: true })
+    res.status(200).json({
+        result: "Updated Successfully",
+        productDetails: updateProduct
+    })
+    } catch (error) {
+        res.status(500).json({
+            msg:error.message
+        })
+    }
+    
+})
+
+// delete product
+router.delete("/:id", async (req, res)=>{
+    try {
+        let product_Id=req.params.id;
+        let product= await ProductModel.findById(product_Id);
+        if (!product) {
+            return res.status(401).json({
+                result: "Product not exists!"
+            })
+        }
+
+        let delProduct= await ProductModel.findByIdAndDelete(product_Id);
+        res.status(200).json({
+            result:"Product deleted successfully",
+            productDetails: delProduct
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            msg:error.message
+        })
+    }
+})
 
 
 
