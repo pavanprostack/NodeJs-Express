@@ -4,6 +4,7 @@ import chalk from 'chalk'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv, { config } from 'dotenv'
+import productRouter from './router/productRouter.js'
 
 const app = express();
 
@@ -22,6 +23,8 @@ let hostname = process.env.HOST_NAME;
 app.get("/", (req, res) => {
     res.send("This is product practice server creation")
 });
+
+app.use("/product", productRouter);
 
 let mongo_URL=process.env.MONGO_DB_LOCAL_URL;
 
