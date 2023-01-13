@@ -37,5 +37,5 @@ mongoose.connect(mongo_Url, {useNewUrlParser: true})
 })
 
 app.listen(port,hostname, () => {
-    console.log(chalk.magentaBright(`Server is running on....http://${hostname}:${port}`))
+    console.log(chalk.magentaBright(`Server is running on http://${hostname}:${port}`))
 })
