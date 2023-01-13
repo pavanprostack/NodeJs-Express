@@ -136,15 +136,21 @@ router.delete("/:id", async (req, res) => {
     }
     catch (err) { }
 
-    // router.delete("/all", async (req, res) => {
-    //     try {
-    //         await ProductModel.remove({});
-    //         res.status(200).json({
-    //             result: "Deleted All Data Successfully"
-    //         })
-    //     }
-    //     catch (err) { }
-    // })
-})
+    // Delete All products
+
+//     router.delete("/all", async (req, res) => {
+//         try {
+//             await ProductModel.deleteMany()
+//             res.status(200).json({
+//                 result: "Deleted All Data Successfully"
+//             })
+//         }
+//         catch (err) {
+//             res.status(500).json({
+//                 msg:err.message
+//             })
+//          }
+//     })
+ })
 
 export default router
