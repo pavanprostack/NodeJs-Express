@@ -23,6 +23,41 @@ router.get("/all", async (req, res) => {
 });
 
 
+// Get Single Product
+
+/*
+    USAGE : Get the single product
+    URL:127.88.99.77:7000/product/:id
+    Method:Get
+    Fields:no-fields
+*/
+
+router.get("/:id", async (req, res) => {
+    try {
+        const product_Id = req.params.id
+        const product = await ProductModel.findById(product_Id);
+
+        if(!product){
+            return res.status(401).json({
+                result:"Product not found!"
+            })
+        }
+        else{
+            res.status(200).json({
+                result: "Single Product",
+                productDetails: product
+            })
+        }
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            msg: err.message
+        })
+    }
+})
+
+
 /*
     URL:localhost:7000/product/create
     Method:POST

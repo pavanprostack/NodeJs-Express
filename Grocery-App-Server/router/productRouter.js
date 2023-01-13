@@ -56,6 +56,7 @@ router.post("/create", async (request, response) => {
     } catch (err) { }
 })
 
+// Get Single Product
 
 /*
     USAGE : Get the single product
@@ -64,15 +65,23 @@ router.post("/create", async (request, response) => {
     Fields:no-fields
 */
 
-// Get Single Product
 router.get("/:id", async (req, res) => {
     try {
         const product_Id = req.params.id
         const product = await ProductModel.findById(product_Id);
-        res.status(200).json({
-            result: "Single Product",
-            productDetails: product
-        })
+
+        if(!product){
+            return res.status(401).json({
+                result:"Product not found!"
+            })
+        }
+        else{
+            res.status(200).json({
+                result: "Single Product",
+                productDetails: product
+            })
+        }
+        
     } catch (err) {
         console.log(err);
         res.status(500).json({
