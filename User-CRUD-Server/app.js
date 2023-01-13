@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import chalk from 'chalk'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 import userRouter from './router/userRouter.js'
 
 const app = express();
@@ -15,6 +16,7 @@ const hostname = process.env.HOST_NAME
 app.get("/", (req, res) => {
     res.send("<h1>Iam Creating User Module Server</h1>");
 })
+
 
 app.use(cors());
 app.use(morgan('tiny'));
