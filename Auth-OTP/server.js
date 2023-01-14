@@ -4,6 +4,7 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import chalk from "chalk";
+
 import app from "./app.js"
 
 dotenv.config({ path: "config/config.env" })
@@ -23,6 +24,7 @@ mongoose.connect(mongo_URL, {
     console.log(`Mongo DB - Connection Failed.`)
 })
 
-app.listen(port, () => {
-    chalk.magentaBright(`Express Server is running on http://localhost:${port}`)
+app.listen(port, (err) => {
+    if(err) throw err;
+   console.log(chalk.magentaBright(`Express Server is running on http://localhost:${port}`)) 
 })

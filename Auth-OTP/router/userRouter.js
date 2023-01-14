@@ -1,9 +1,9 @@
 // step : 6:-
 
 import express from 'express'
-import {signUp, verifyOtp} from '../controllers/userController.js'
+import { signUp, verifyOtp } from '../controllers/userController.js'
 
-const router=express.Router();
+const router = express.Router();
 
 router.route("/signup").post(signUp)
 
