@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-const database = `mongodb+srv://pavan107:Pavan@107@cloud-database.nnpecqn.mongodb.net/test?retryWrites=true&w=majority`
+const database = `mongodb+srv://pavan107:Pavan%40107@cloud-database.nnpecqn.mongodb.net/test?retryWrites=true&w=majority`
 
 const app = express();
 
