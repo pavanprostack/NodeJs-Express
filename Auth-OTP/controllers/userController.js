@@ -1,10 +1,9 @@
 // Step:5:-
 
 import bcrypt from 'bcrypt'
-import _ from 'lodash'
+import lodash from 'lodash'
 import axios from 'axios'
 import otpGenerator from 'otp-generator'
-
 import UserModel from '../model/userModel.js'
 import OtpModel from '../model/otpModel.js'
 
@@ -45,7 +44,7 @@ const verifyOtp = async (req, res) => {
     const validUser = await bcrypt.compare(req.body.otp, recentOtp.otp);
 
     if (recentOtp.number === req.body.number && validUser) {
-        const user = new UserModel(_.pick(req.body, ["number"]));
+        const user = new UserModel(lodash.pick(req.body, ["number"]));
         const token = user.generateJWT();
 
         const result = await user.save();
